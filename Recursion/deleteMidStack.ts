@@ -18,6 +18,6 @@ class Solution {
     s.push(temp);
   }
 }
-const input = [1, 2, 3, 4];
+let input = [1, 2, 3, 4];
 Solution.deleteMid(input, input.length);
 console.log(input);
