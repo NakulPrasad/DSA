@@ -21,7 +21,7 @@ let l = 0,
 //if we sort then max will be last element.
 
 while (l < r) {
-  let mid = r - (r - l) / 2;
+  let mid = r - ((r - l) / 2);
   if (arr[mid] > arr[mid + 1] && arr[mid] > arr[mid - 1]) {
     max = Math.max(arr[mid], max);
     l++;
