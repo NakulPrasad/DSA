@@ -6,9 +6,15 @@
  * Output: 4
  * Explanation: 9 exists in nums and its index is 4
  *
- * Time : O(logN)
- * Space : O(1)
  */
+
+/**
+ * @Intitution : move the largest element to right, sorts the array;
+ * @Approach : compare two adjacent pairs and swap if left > right;
+ * @Complexity : Time : O(N^2), Space : O(1)  
+ * 
+ * 
+*/
 
 function search(nums: number[], target: number): number {
   let n = nums.length - 1;

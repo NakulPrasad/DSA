@@ -6,18 +6,11 @@
  * Output: 2
  * Explanation: The square root of 8 is 2.82842..., and since we round it down to the nearest integer, 2 is returned.
  */
-import { log } from "node:console";
-import readline from "node:readline";
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-class solution {
+class Solution {
   mySqrt(x: number): number {
-    let l = 1,
-      r = x;
+    let l = 1, r = x;
+    
     while (l <= r) {
       let mid = Math.floor(l + (r - l) / 2);
       //   console.log(mid);
@@ -31,9 +24,4 @@ class solution {
     return r;
   }
 }
-const sol = new solution();
-rl.question(``, (num: number) => {
-  const ans = sol.mySqrt(num);
-  log(ans);
-  rl.close();
-});
+
