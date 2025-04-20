@@ -1,1 +1,0 @@
-https://leetcode.com/discuss/post/6540841/range-queries-prefix-sum-segment-tree-by-undm/
