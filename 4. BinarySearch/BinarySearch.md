@@ -19,7 +19,53 @@ Output: 0
 Explanation: 1 appears at index 0.
 ```
 
-![image](NormalBS/Learning/BS_1.jpg)
+![image](NormalBS/Learning/find-target-in-arrray.jpg)
+
+```java
+function search(nums: number[], target: number): number {
+    let n = nums.length -1;
+    let l = 0;
+    let r=n;
+    while(l<=r){
+        let mid = Math.floor(l + ((r-l)/2));
+        if(nums[mid] === target) return mid;
+        else if(nums[mid] < target){
+            l = mid+1;
+        }
+        else if(nums[mid]>target){
+            r=mid-1;
+        }
+    }
+    return -1;
+};
+
+/**
+ * return first occurence
+*/
+
+class Solution {
+    public int binarysearch(int[] nums, int target) {
+        int l = 0;
+        int r = nums.length - 1;
+        int idx = -1;
+
+        while (l <= r) {
+            int mid = l + (r - l) / 2;
+            if (nums[mid] == target) {
+                idx = mid; //this changes
+                r = mid-1;
+              
+            } else if (nums[mid] < target) {
+                l = mid + 1;
+            } else {
+                r = mid - 1;
+            }
+        }
+
+        return idx;
+    }
+}
+```
 
 ### Q.2 Find target in a reverse sorted array
 ![image](NormalBS/Learning/BS_2.0.jpg)
@@ -295,8 +341,45 @@ Input: nums = [1,2,1,3,5,6,4]
 Output: 5
 Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
 ```
-![image](BSOnAns/Learning/BS_15.0.jpg)
-![image](BSOnAns/Learning/BS_15.1.jpg)
+![image](BSOnAns/Learning/peak_element-0.jpg)
+
+```java
+class Solution {
+    public int findPeakElement(int[] nums) {
+        int start = 0;
+        int end = nums.length-1;
+        if (end == 0) return 0;
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            if(mid>0 && mid<nums.length-1){//handle boundary indexes
+                if(nums[mid] > nums[mid-1] && nums[mid] > nums[mid+1]){
+                    return mid;
+                }
+                else if(nums[mid+1]>nums[mid]){
+                    start = mid+1;
+                }
+                else 
+                    end = mid-1;
+            }
+            //boundary cases
+            else if(mid ==0){
+                if(nums[0] > nums[1])
+                return 0;
+                else 
+                return 1;
+            }
+            else if(mid == nums.length-1){
+                if(nums[nums.length-1] > nums[nums.length-2])
+                return nums.length-1;
+                else 
+                return nums.length-2;
+            }
+
+        }
+            return -1;
+    }
+}
+```
 
 ### Q.16 Find Maximum Element in bitonic array
 
@@ -320,7 +403,7 @@ Input :  arr[] = {5, 6, 7, 8, 9, 10, 3, 2, 1}, key = 30
 Output : Not Found
 ```
 
-### Q.18 [Search in a row wise and column wise sorted matrix](https://www.geeksforgeeks.org/problems/search-in-a-matrix17201720/1)
+### Q.18 [Search in a row wise and column wise sorted matrix](https://leetcode.com/problems/search-a-2d-matrix/description/)
 
 Given a matrix mat[][] and an integer x, the task is to check if x is present in mat[][] or not. Every row and column of the matrix is sorted in increasing order.
 
@@ -345,7 +428,30 @@ Output: true
 Explanation: mat[2][0] is equal to 35.
 ```
 
-![image](BSOnAns/Learning/BS_18.jpg)
+![image](BSOnAns/Learning/search-in-2d-matrix.jpg)
+
+```java
+class Solution {
+
+    public boolean searchMatrix(int[][] matrix, int target) {
+        boolean ans = false;
+        int row = matrix.length;
+        int col = matrix[0].length;
+        //i= row/ j=col
+        int i=0,j=col-1; 
+        while(i>=0 && i<row && j>=0 && j<col){
+            if(matrix[i][j] == target)
+            return true;
+            else if (matrix[i][j] > target)
+                j--;
+            else
+                i++;
+        }
+        return false;
+
+    }
+}
+```
 
 ### Q.19 [Allocate Minimum Pages](https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1)
 
@@ -376,4 +482,6 @@ Explanation: Allocation can not be done.
 Input: arr[] = [22, 23, 67], k = 1
 Output: 112
 ```
+
+
 
