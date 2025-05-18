@@ -1,9 +1,12 @@
-package Others;
+# Bit Manipulation
 
+## Missing Number
+
+### Approach : XOR
+```java
 /**
- * @Intitution: Taking xor of same number cancel each other
- * @Approach: XOR
- * @Complexity: Time : O(2N), Space : O(1)
+ * Intitution: Taking xor of same number cancel each other
+ * Complexity: Time : O(2N), Space : O(1)
  * 
  */
 
@@ -19,3 +22,4 @@ class MissingNumber {
         return xor;
     }
 }
+```
