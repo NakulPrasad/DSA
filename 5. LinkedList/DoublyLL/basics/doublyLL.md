@@ -1,8 +1,6 @@
-![Doubly LL](image.png)
+# Doubly Linked List
 
-
-# Pseudo-Code
-
+![](images/doublyLL.png)
 ```java
 Function constructDLL(arr):
     Create a new node 'head' with value arr[0]
