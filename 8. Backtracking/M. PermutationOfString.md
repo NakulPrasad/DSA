@@ -1,6 +1,3 @@
-package Backtracking;
-
-import java.util.*;
 
 /**
  * Given a string S, the task is to write a program to print all permutations of
