@@ -1,4 +1,4 @@
-# [Find first and last positions of an element](https://www.geeksforgeeks.org/find-first-and-last-positions-of-an-element-in-a-sorted-array/)
+# [Find first and last positions of an element](https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1)
 
 Given a sorted array arr[] with possibly some duplicates, the task is to find the first and last occurrences of an element x in the given array.
 

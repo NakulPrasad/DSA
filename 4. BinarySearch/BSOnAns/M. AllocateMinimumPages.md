@@ -9,7 +9,6 @@ The objective is to minimize the maximum number of pages assigned to any student
 
 Note: Return -1 if a valid assignment is not possible, and allotment should be in contiguous order (see the explanation for better understanding).
 
-
 ```java
 Input: arr[] = [12, 34, 67, 90], k = 2
 Output: 113
