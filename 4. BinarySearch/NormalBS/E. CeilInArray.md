@@ -19,7 +19,6 @@ Explanation: Smallest number greater than 0 is 1, whose indices are 0 and 1. The
 
 ```java
 /**
- * Difficulty : Easy
  * Intitution :  
  * Time : O(logN)
  * Space : O(1)
