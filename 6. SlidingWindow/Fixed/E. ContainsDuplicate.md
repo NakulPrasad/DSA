@@ -22,7 +22,6 @@ Output: false
 
 ```java
 /**
- * Difficulty : Easy
  * Intitution : 
  * Time : O(N2)
  * Space : O(1)
@@ -46,7 +45,6 @@ class Solution {
 -  We can mantain a window of size abs(i-j); add elements to a set to check for duplicates.
 ```java
 /**
- * Diffuiculty : Easy
  * Time : O(N)
  * Space : O(k) 
  */

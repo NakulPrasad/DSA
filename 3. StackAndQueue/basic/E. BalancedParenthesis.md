@@ -9,9 +9,16 @@ An input string is valid if:
 
 ```java
 /**
- * Intitution : 
+ * Intitution:
+ * This one is different as output format is different than what's input.
+ *
+ * Approach:
+ * We maintain count of open and close brackets, when both count is zero we get a possible answer, store in list/array;
+ * we know that first bracket will always be an "Open bracket", hence we remove the possiblity of starting with close bracket.
+ *
  * Time : O(N)
  * Space : O(N)
+ * 
 */
 class Solution {
     public boolean isValid(String s) {

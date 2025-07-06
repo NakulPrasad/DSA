@@ -1,6 +1,7 @@
 # Recursion
 
 x = 10;
+```
 function increasing(x: number) {
   if (x === 0) return;
   increasing(x - 1);
@@ -18,3 +19,4 @@ increasing(x);
 // 2. Recusion tree =>medium
 // 3. DP => hard
 
+```
