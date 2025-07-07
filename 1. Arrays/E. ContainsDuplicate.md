@@ -1,9 +1,10 @@
 # [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 
-### Approach : SET
+## Approach : SET
+
+- Set doesn't contains duplicates
 ```java
-/** n
- * Approach : Set doesn't contains duplicates
+/** 
  * Time : O(1)
  * Space : O(N)
  * 
@@ -13,11 +14,10 @@ function containsDuplicate(nums: number[]): boolean {
     return nums.length != set.size
 };
 ```
-### Approach : Sorting
-Sort the array, then find the repeating element
+## Approach : Sorting
+- Sort the array, then find the repeating element
 ```java
 /**
- * Difficulty : Easy
  * Time : O(Nlogn) + O(N) 
  * Space : O(1)
 */

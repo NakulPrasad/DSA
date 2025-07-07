@@ -15,6 +15,10 @@ Output: [8, -1, 1, 3, -1]
 Explanation: The next larger element to 6 is 8, for 8 there is no larger elements hence it is -1, for 0 it is 1 , for 1 it is 3 and then for 3 there is no larger element on right and hence -1.
 ```
 ```java
+/**
+ * Time : N
+ * Space : N
+ */
 class Solution {
     public ArrayList<Integer> nextLargerElement(int[] nums) {
         int n = nums.length;

@@ -20,7 +20,6 @@ Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 ```
 
-
 ```java
 /**
  * Definition for singly-linked list.
@@ -36,29 +35,29 @@ class Solution {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
 
         ListNode dummyHead = new ListNode(0);
-        ListNode curr = dummyHead; 
+        ListNode curr = dummyHead;
         int carry = 0;
 
         while (l1 != null || l2 != null || carry != 0) {
             // Determine the values of the nodes or use 0 if node is null
             int x = (l1 != null) ? l1.val : 0;
             int y = (l2 != null) ? l2.val : 0;
-            
+
             int sum = x + y + carry;
-            carry = sum / 10; 
-            
+            carry = sum / 10;
+
             // Create a new node with unit digit of sum
             ListNode l3 = new ListNode(sum % 10);
-            
+
             // Attach the new node to the current node's next and move the current pointer
             curr.next = l3;
             curr = curr.next;
-            
+
             // Move to the next nodes in l1 and l2 if they are not null
             if (l1 != null) l1 = l1.next;
             if (l2 != null) l2 = l2.next;
         }
-        
+
         // Return the linked list starting from the next of dummy head
         return dummyHead.next;
     }

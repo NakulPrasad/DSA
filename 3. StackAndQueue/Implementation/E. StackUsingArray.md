@@ -1,6 +1,11 @@
-# Implement Stack Using Arrays
+# [Implement Stack Using Arrays](https://www.geeksforgeeks.org/problems/implement-stack-using-array/1)
 
 As we know stack works on the principle of last in first out, so we have to put elements in an array such that it keeps track of the most recently inserted element. Hence we can think of using a Top variable which will help in keeping track of recent elements inserted in the array.
+
+- create and array of size 100, and top variable;
+- push : increase top by 1 and insert to array
+- pop : remove element from array at index 'top' and return that;
+- top : return arr[top];
 
 ```java
 class MyStack {

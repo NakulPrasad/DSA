@@ -21,6 +21,10 @@ Output: -1
 ![image](NormalBS/Learning/BS_7.1.jpg)
 
 ```java
+/**
+ * Time : logn
+ * Space : 1
+ */
 class Solution {
     public int search(int[] nums, int target) {
         int minI =-1;

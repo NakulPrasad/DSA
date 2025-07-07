@@ -11,7 +11,7 @@ Input: head = [3,2,0,-4], pos = 1
 Output: true
 Explanation: There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
 ```
-
+## Approach : Fast and Slow pointers
 ```java
 /**
  * Definition for singly-linked list.
@@ -34,6 +34,27 @@ public class Solution {
             slow = slow.next;
             if(fast == slow)return true;
 
+        }   
+        return false;
+    }
+}
+```
+## Approach : HashSet
+
+```java
+/**
+ * Time : N
+ * Space : N
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        var set = new HashSet<ListNode>();
+        while(head != null){
+            if(set.contains(head)){
+                return true;
+            }
+            set.add(head);
+            head = head.next;
         }   
         return false;
     }
