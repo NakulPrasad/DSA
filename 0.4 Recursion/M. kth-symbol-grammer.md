@@ -1,3 +1,5 @@
+
+```java
 function kthGrammar(n: number, k: number): number {
   let mid = Math.pow(2, n - 1) / 2;
   let ans = helper(n, k, mid);
@@ -15,6 +17,7 @@ function helper(n, k, mid): number {
     return 1 - helper(n - 1, k - mid, mid);
   }
 }
+  ```
 
 // This is observation question, and question is made like recusrion;
 // observations:

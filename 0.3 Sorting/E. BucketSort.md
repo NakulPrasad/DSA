@@ -12,6 +12,11 @@ Now we sort these elements in the bucket individually.
 
 nums = [10 18 20 60 82 83 88 95]
 
+* Use frequency map
+* create bucket list : list<list<characters>>
+* put elements of frequency map to the bucket list
+* Iterate from last as we want high freq first, pick each index list then iterate over the list to get the characters.
+
 ```java
 import java.io.*;
 import java.lang.*;

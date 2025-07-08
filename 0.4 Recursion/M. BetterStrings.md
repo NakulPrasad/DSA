@@ -1,23 +1,22 @@
+# [Better String](https://www.geeksforgeeks.org/problems/better-string/1)
+
+ Given a pair of strings of equal lengths, Geek wants to find the better string. The better string is the string having more number of distinct subsequences. If both the strings have equal count of distinct subsequence then return str1.
+
+``` 
+ Input:
+ str1 = "gfg", str2 = "ggg"
+ Output: "gfg"
+ Explanation: "gfg" have 6 distinct subsequences whereas "ggg" have 3 distinct
+ subsequences.
+```
+## Approach : Hashset
+```java
 /**
- * Given a pair of strings of equal lengths, Geek wants to find the better
- * string. The better string is the string having more number of distinct
- * subsequences.
- * If both the strings have equal count of distinct subsequence then return
- * str1.
- * 
- * Input:
- * str1 = "gfg", str2 = "ggg"
- * Output: "gfg"
- * Explanation: "gfg" have 6 distinct subsequences whereas "ggg" have 3 distinct
- * subsequences.
- * 
  * Time : O(2^N) : Gives TLE, TRY DP
  * Space : O(2N)
  */
-
 class Solution {
     public String betterString(String str1, String str2) {
-        // Code here
         Set<String> set1 = new HashSet<>();
         Set<String> set2 = new HashSet<>();
         solve(str1, "", set1);
@@ -41,3 +40,4 @@ class Solution {
         solve(input.substring(1), out2, set);
     }
 }
+```

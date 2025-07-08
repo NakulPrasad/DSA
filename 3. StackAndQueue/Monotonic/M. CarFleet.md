@@ -1,4 +1,5 @@
 # [Car Fleet](https://leetcode.com/problems/car-fleet/description/)
+
 There are n cars at given miles away from the starting mile 0, traveling to reach the mile target.
 
 You are given two integer array position and speed, both of length n, where position[i] is the starting mile of the ith car and speed[i] is the speed of the ith car in miles per hour.
@@ -24,15 +25,16 @@ The cars starting at 10 (speed 2) and 8 (speed 4) become a fleet, meeting each o
 The car starting at 0 (speed 1) does not catch up to any other car, so it is a fleet by itself.
 The cars starting at 5 (speed 1) and 3 (speed 3) become a fleet, meeting each other at 6. The fleet moves at speed 1 until it reaches target.
 ```
+
 ## Approach : Stack
 
 ```java
 /**
- * Intitution : As cars can't overtake, by comparing time taken to reach target we can count cars fleet. Car starting from behind has less ETA means it will meet with larger ETA. Sort as per starting position and put ETAs in stack from reverse order. 
- * Why Reverse ? 
+ * Intitution : As cars can't overtake, by comparing time taken to reach target we can count cars fleet. Car starting from behind has less ETA means it will meet with larger ETA. Sort as per starting position and put ETAs in stack from reverse order.
+ * Why Reverse ?
  * We dont know which forward car has larger ETAs than current
  * Time : O(N) * O(LogN)
- * Space : O(N)  
+ * Space : O(N)
  */
 class Solution {
     public int carFleet(int target, int[] position, int[] speed) {
@@ -55,11 +57,13 @@ class Solution {
     }
 }
 ```
+
 ### Custom Comparator
+
 ```java
 /**
- * Intitution : As cars can't overtake, by comparing time taken to reach target we can count cars fleet. Car starting from behind has less ETA means it will meet with larger ETA. Sort as per starting position and put ETAs in stack from reverse order. 
- * Why Reverse ? 
+ * Intitution : As cars can't overtake, by comparing time taken to reach target we can count cars fleet. Car starting from behind has less ETA means it will meet with larger ETA. Sort as per starting position and put ETAs in stack from reverse order.
+ * Why Reverse ?
  * We dont know which forward car has larger ETAs than current
  * Time : O(N) * O(LogN)
  * Space : O(N) + O(N)

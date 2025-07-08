@@ -1,6 +1,7 @@
 # Generate Parentheses
 
 Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+
 ```
 Input: n = 3
 Output: ["((()))","(()())","(())()","()(())","()()()"]
@@ -8,6 +9,7 @@ Output: ["((()))","(()())","(())()","()(())","()()()"]
 Input: n = 1
 Output: ["()"]
 ```
+
 ```java
 class Solution {
     public List<String> generateParenthesis(int n) {

@@ -1,9 +1,17 @@
-package Recursion;
-
+# [Tower of Hanoi](https://www.geeksforgeeks.org/problems/tower-of-hanoi-1587115621/1)
+## Approach : Recursion
+* move elements from source to helper, leave the last disk in source;
+* move the last disk to destination
+* move the disks in helper to destination;
+* 
+```java
+/**
+ * Time : O(N2)
+ * space : O(N)
+ */ 
 class towerOfHanoi {
 
     public long toh(int n, int from, int to, int aux) {
-        // Your code here
         long[] ans = { 0 };
         // System.out.println(from + " " + to);
         move(n, from, to, aux, ans);
@@ -27,8 +35,5 @@ class towerOfHanoi {
 
     }
 }
+```
 
-// move elements from source to helper, leave the last disk in source;
-// move the last disk to destination
-// move the disks in helper to destination;
-// Time : O(N2), space : O(N)

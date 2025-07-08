@@ -1,6 +1,7 @@
 # [Daily Temperature](https://leetcode.com/problems/daily-temperatures/description/)
 
 Given an array of integers temperatures represents the daily temperatures, return an array answer such that answer[i] is the number of days you have to wait after the ith day to get a warmer temperature. If there is no future day for which this is possible, keep answer[i] == 0 instead.
+
 ```
 Example 1:
 
@@ -18,9 +19,9 @@ Input: temperatures = [30,60,90]
 Output: [1,1,0]
 ```
 
-## Approach : Stack 
-This problem is same as finding next greater element right. Here we calculate distances from each index to its NGEs.
+## Approach : Stack
 
+This problem is same as finding next greater element right. Here we calculate distances from each index to its NGEs.
 
 ```java
 class Solution {

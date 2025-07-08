@@ -9,4 +9,29 @@ Input: arr[] =  {10, 3, 40, 20, 50, 80, 70}, key = 40
 Output: 2 
 Output is index of 40 in given array
 ```
-![image](NormalBS/Learning/BS_8.jpg)
+## Approach : Binary Search 
+```java
+class Solution {
+    public int findTarget(int arr[], int target) {
+        int l=0,r=arr.length-1;
+        while(l<=r){
+            int mid = l + (r-l)/2;
+            if(arr[mid] == target){
+                return mid;
+            }
+            else if(mid -1 >= l && arr[mid-1] == target){
+                return mid-1;
+            }
+            else if(mid +1 <= r && arr[mid+1] == target){
+                return mid+1;
+            }
+            else if(arr[mid] > target){
+                r = mid-2;
+            }
+            else 
+                l = mid+2;
+        }
+        return -1;
+    }
+}
+```
