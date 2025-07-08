@@ -1,19 +1,25 @@
 # [Set Matrix Zeros](https://leetcode.com/problems/set-matrix-zeroes/description/)
+
 Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
 You must do it in place.
 
-Example 1:
----
+## Example 1:
+
 ![alt text](https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg)
+
 ```
 Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
 Output: [[1,0,1],[0,0,0],[1,0,1]]
 ```
+
 ```java
+/**
+ * Time : (m * n) * (m+n) + (m+n)
+ */
 class Solution {
     public void setZeroes(int[][] matrix) {
-        
+
         for(int i=0;i<matrix.length;i++){ //row
             for(int j=0;j< matrix[i].length;j++){ //column
                 if(matrix[i][j] == 0) {
@@ -30,7 +36,7 @@ class Solution {
                }
             }
         }
-        
+
     }
     // function to make row zero
     void setRowZero(int i,int[][]matrix ){
