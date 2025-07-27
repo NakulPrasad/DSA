@@ -1,4 +1,6 @@
-# Algorithm
+# [Sort a stack](https://www.geeksforgeeks.org/problems/sort-a-stack/1)
+
+## Algorithm
 
 1. Firstly, We will pop out the top element of the stack and pass the remaining stack to the same function i.e (recursive call).
 2. Continue the above process until the stack becomes empty.
