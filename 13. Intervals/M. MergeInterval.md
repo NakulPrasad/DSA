@@ -23,6 +23,8 @@ intervals[i].length == 2
 0 <= starti <= endi <= 104
 ```
 
+# Approach : Linear search
+
 ```java
 class Solution {
     public int[][] merge(int[][] intervals) {
