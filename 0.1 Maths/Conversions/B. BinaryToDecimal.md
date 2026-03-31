@@ -24,21 +24,25 @@ Constraints:
 - Extract last digit
 - left shift means raising in power 2
 
+
+12 = 1100
+2^0*0 + 2^1*0 + 2^2*1 + 2^2*2
+
 ```java
 class Solution {
-    public int binary_to_decimal(String str) {
+    public int binaryToDecimal(String b) {
         // Code here
-        int base = 0;
+        StringBuilder sb = new StringBuilder(b);
         int ans = 0;
-        int l = str.length()-1;
-        while(l>=0){
-            int lastDigit = Integer.parseInt(str.substring(l,l+1));
-            if(lastDigit ==1){
-                ans += Math.pow(2,base);
-
-            }
+        int l = sb.length()-1;
+        int last = 0;
+        int power = 0;
+        while(l >=0){
+            last = sb.charAt(l) - '0';
+            ans += (1 << power) * last;
             l--;
-            base++;
+            power ++;
+
         }
         return ans;
     }
