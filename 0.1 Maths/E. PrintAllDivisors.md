@@ -5,29 +5,23 @@
 A brute force approach would be to iterate from 1 to n checking each value if it divides n without leaving a remainder. For each divisor found, store it in an array and a count of divisors is maintained. After iterating through all possible values, the size of the array is updated with the count of divisors and the array is returned.
 
 ```java
-                                
-public class Main {
-    public static int[] printDivisors(int n, int[] size) {
-        // Allocate memory for
-        // the array of divisors
-        int[] divisors = new int[n];
-        // Initialize the count of divisors
-        int count = 0;
 
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) {
-                // Add the divisor to the array
-                divisors[count++] = i;
+class Solution {
+    public static void print_divisors(int n) {
+        // code here
+        List<Integer> list = new ArrayList<>();
+        for(int i=1;i<=n;i++){
+            if(n % i == 0){
+                list.add(i);
             }
         }
-        // Update the size parameter
-        // with the count of divisors
-        size[0] = count;
-        // Return the array of divisors
-        return divisors;
+        for(int i: list){
+            System.out.print(i + " ");
+        }
     }
 }
-                                                     
+
+
 ```
 
 #### Approach : Optimal
@@ -39,7 +33,7 @@ This property is symmetric about the square root of n by traversing just the fir
 ![image](https://static.takeuforward.org/content/print-all-divisors-image1-fh-zLEup)
 
 ```java
-                                
+
 import java.util.ArrayList;
 
 public class Main {
