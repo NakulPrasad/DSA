@@ -25,29 +25,25 @@ Constraints:
 1 ≤ arr[i] ≤ 109
 ```
 
+## Approach
+sort the array, return the minimum difference of maximum chocholate and minimum chocolate packet
+
 ```java
 /**
  * Time : N + NlogN
  * Space :1
  */
-class Solution
-{
-    public long findMinDiff (ArrayList<Integer> a, int n, int m)
-    {
-        // your code here
-        Collections.sort(a);
-
-        int start =0;
-        int end = m-1;
-        int MinDiff = Integer.MAX_VALUE;
-
-        for(int i=0; i<n-m+1; i++){
-            int diff = a.get(end) - a.get(start);
-            MinDiff = Math.min(diff, MinDiff);
-            start++;
-            end++;
+class Solution {
+    public int findMinDiff(int arr[], int m) {
+        // code here
+        Arrays.sort(arr);
+        int min =Integer.MAX_VALUE;
+        int l = arr.length-1;
+        for(int i=0;i<=l-1;i++){
+            if(i+m-1 <=l)
+            min = Math.min(Math.abs(arr[i] - arr[i+m-1]), min);
         }
-        return MinDiff;
+        return min;
     }
 }
 ```

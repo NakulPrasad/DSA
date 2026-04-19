@@ -1,4 +1,4 @@
-# LCM and GCD
+# [LCM and GCD](https://www.geeksforgeeks.org/problems/lcm-and-gcd4516/1)
 
 ```java
 /*
