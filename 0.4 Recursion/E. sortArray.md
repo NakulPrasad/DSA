@@ -54,3 +54,66 @@ class Solution {
 }
 
 ```
+## Approach : Recursive Inserrtion sort
+Aditya verma
+```java
+class Solution {
+
+    public int[] sortArray(int[] nums) {
+
+        // Time: O(N^2)
+        // Space: O(N)
+
+        // Convert int[] -> ArrayList<Integer>
+        ArrayList<Integer> list = Arrays.stream(nums)
+                                .boxed()
+                                .collect(Collectors.toCollection(ArrayList::new));
+
+        // Sort recursively
+        sort(list);
+
+        // Convert ArrayList<Integer> -> int[]
+        return list.stream()
+                   .mapToInt(Integer::intValue)
+                   .toArray();
+    }
+
+    void sort(ArrayList<Integer> list) {
+
+        // Base case
+        if(list.size() == 0) {
+            return;
+        }
+
+        // Remove last element
+        int lastIndex = list.size() - 1;
+        int temp = list.get(lastIndex);
+        list.remove(lastIndex);
+
+        // Sort remaining list
+        sort(list);
+
+        // Insert element at correct position
+        insert(list, temp);
+    }
+
+    void insert(ArrayList<Integer> list, int temp) {
+
+        // Correct position found
+        if(list.isEmpty() || list.get(list.size() - 1) < temp) {
+            list.add(temp);
+            return;
+        }
+
+        // Remove larger element
+        int val = list.get(list.size() - 1);
+        list.remove(list.size() - 1);
+
+        // Insert temp recursively
+        insert(list, temp);
+
+        // Add removed element back
+        list.add(val);
+    }
+}
+```
