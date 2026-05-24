@@ -33,12 +33,37 @@ CONSTRAINTS:
 s only contains lowercase and Uppercase English letters.
 ```
 ## Approach : Recursion
-```
-class Solution {
+Intitution : 
+
+To generate all subsets, for every element we have only two choices:
+
+1. **Include** the current element in the subset
+2. **Exclude** the current element from the subset
+
+We use recursion to explore both possibilities for each element.
+
+At every recursive call:
+
+* `out1` represents the subset where the current element is included.
+* `out2` represents the subset where the current element is excluded.
+
+We continue this process until no elements are left in the input array.
+At that point, the generated subset is added to the answer list.
+
+Since the array may contain duplicate elements, duplicate subsets can also be formed.
+To avoid this:
+
+* We first sort the array so duplicates appear together.
+* We use a `HashSet` to store already generated subsets and prevent duplicates from being added again.
+
+The recursion tree explores every possible combination, which gives all unique subsets.
+
+```java
 /**
  * Time : O(2^N)
  * Space : O(N)
  */
+class Solution {
     ArrayList<String> permutation(String s) {
         // Code Here
         ArrayList<String> ans = new ArrayList<>();
