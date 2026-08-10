@@ -1,8 +1,40 @@
 # Order Not Known
 
+> **Difficulty:** Easy  
+> **Topic / Pattern:** BinarySearch  
+
+---
+
+## 📝 Problem Statement
+
 Given a sorted array of numbers, find if a given number ‘key’ is present in the array. Though we know that the array is sorted, we don’t know if it’s sorted in ascending or descending order.
 
 ![image](images/order-not-known.jpg)
+
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](images/order-not-known.jpg)
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -40,3 +72,19 @@ public:
     }
 };
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

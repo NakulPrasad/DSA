@@ -1,4 +1,12 @@
-# [Number Of Times Sorted array Rotated](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+# Number Of Times Sorted array Rotated
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** BinarySearch  
+> **Link:** [Number Of Times Sorted array Rotated](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+
+---
+
+## 📝 Problem Statement
 
 Suppose an array of length n sorted in ascending order is rotated between 1 and n times. For example, the array nums = [0,1,2,4,5,6,7] might become:
 
@@ -10,7 +18,8 @@ Given the sorted rotated array nums of unique elements, return the minimum eleme
 
 You must write an algorithm that runs in O(log n) time.
 
-```
+### Examples
+```text
 Input: nums = [3,4,5,1,2]
 Output: 1
 Explanation: The original array was [1,2,3,4,5] rotated 3 times.
@@ -21,8 +30,21 @@ Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
 
 Input: nums = [11,13,15,17]
 Output: 11
-Explanation: The original array was [11,13,15,17] and it was rotated 4 times. 
+Explanation: The original array was [11,13,15,17] and it was rotated 4 times.
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -48,3 +70,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

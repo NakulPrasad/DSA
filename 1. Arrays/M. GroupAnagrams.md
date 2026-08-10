@@ -1,8 +1,17 @@
-# [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+# Group Anagrams
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Group Anagrams](https://leetcode.com/problems/group-anagrams/)
+
+---
+
+## 📝 Problem Statement
 
 Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 
-```java
+### Examples
+```text
 Input: strs = ["eat","tea","tan","ate","nat","bat"]
 
 Output: [["bat"],["nat","tan"],["ate","eat","tea"]]
@@ -23,7 +32,62 @@ Input: strs = ["a"]
 
 Output: [["a"]]
 ```
-### Approach : HashMap
+
+---
+
+## 💡 Intuition & Core Approach
+
+HashMap
+
+```
+/**
+ * Intitution: For group each member should contains same character of same occurence. We can sort each element and push in hashmap to group it. 
+ * 
+ * s.toCharArray() → O(k) 
+ * Arrays.sort(temp) → O(k log k) 
+ * String.valueOf(temp) → O(k)
+ * HashMap operations (get, put, containsKey) → O(1) average case,
+ * 
+ * 
+*/
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String, List<String>> hm = new HashMap<>();
+        for(String s: strs){
+            char[] temp = s.toCharArray();
+            Arrays.sort(temp);
+            String str = String.valueOf(temp);
+
+            //check if map contains element
+            if(hm.containsKey(str)){
+                List<String> existing = hm.get(str);
+                existing.add(s);
+            }
+            //if map doesn't contains the element
+            else{
+                List<String> list = new ArrayList<>();
+                list.add(s);
+                //push to map
+                hm.put(str, list);
+
+            }
+
+        }
+
+        //add values to the final lsit
+        List<List<String>> ans = new ArrayList<>();
+
+        for(List<String> list: hm.values()){
+            ans.add(list);
+        }
+        return ans;
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -70,3 +134,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N | [Provide justification] |
+| **Space Complexity** | O(n | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,4 +1,12 @@
-# [Sort Colors](https://leetcode.com/problems/sort-colors/description/)
+# Sort Colors
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Sort Colors](https://leetcode.com/problems/sort-colors/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an array nums with n objects colored red, white, or blue, sort them in-place so that objects of the same color are adjacent, with the colors in the order red, white, and blue.
 
@@ -6,7 +14,8 @@ We will use the integers 0, 1, and 2 to represent the color red, white, and blue
 
 You must solve this problem without using the library's sort function.
 
-```
+### Examples
+```text
 Example 1:
 
 Input: nums = [2,0,2,1,1,0]
@@ -17,13 +26,18 @@ Input: nums = [2,0,1]
 Output: [0,1,2]
 ```
 
-```
-Constraints:
+---
 
-n == nums.length
-1 <= n <= 300
-nums[i] is either 0, 1, or 2.
-```
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -64,5 +78,20 @@ class Solution {
         nums[j] = temp;
     }
 }
-
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

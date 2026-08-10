@@ -1,8 +1,17 @@
-# [Permutation With Spaces](https://www.geeksforgeeks.org/problems/permutation-with-spaces3627/1)
+# Permutation With Spaces
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Recursion  
+> **Link:** [Permutation With Spaces](https://www.geeksforgeeks.org/problems/permutation-with-spaces3627/1)
+
+---
+
+## 📝 Problem Statement
 
 Given a string s, you need to print all possible strings that can be made by placing spaces (zero or one) in between them. The output should be printed in sorted increasing order of strings.
 
-```
+### Examples
+```text
 Example 1:
 
 Input:
@@ -27,12 +36,11 @@ Expected Time Complexity: O(2s)
 Expected Auxiliary Space: O(1)
 ```
 
-```
-CONSTRAINTS:
-1 <= |s| < 10
-s only contains lowercase and Uppercase English letters.
-```
-## Approach : Recursion
+---
+
+## 💡 Intuition & Core Approach
+
+Recursion
 Intitution : 
 
 To generate all subsets, for every element we have only two choices:
@@ -57,6 +65,39 @@ To avoid this:
 * We use a `HashSet` to store already generated subsets and prevent duplicates from being added again.
 
 The recursion tree explores every possible combination, which gives all unique subsets.
+
+```
+/**
+ * 
+ * 
+ */
+class Solution {
+    ArrayList<String> permutation(String s) {
+        // Code Here
+        ArrayList<String> ans = new ArrayList<>();
+        String output = s.charAt(0) + "";
+        solve(s.substring(1), output, ans);
+        Collections.sort(ans);
+        return ans;
+    }
+
+    void solve(String input, String output, ArrayList<String> ans) {
+        if (input.length() == 0) {
+            ans.add(output);
+            return;
+        }
+        String out1 = output + input.charAt(0);
+        String out2 = output + " " + input.charAt(0);
+
+        solve(input.substring(1), out1, ans);
+        solve(input.substring(1), out2, ans);
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -86,3 +127,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(2^N) | [Provide justification] |
+| **Space Complexity** | O(1) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

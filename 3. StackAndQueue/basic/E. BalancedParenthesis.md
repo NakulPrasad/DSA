@@ -1,4 +1,12 @@
-# [Balanced Parenthesis](https://leetcode.com/problems/valid-parentheses/description/)
+# Balanced Parenthesis
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** StackAndQueue  
+> **Link:** [Balanced Parenthesis](https://leetcode.com/problems/valid-parentheses/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given a string `s` containing just the characters `'('`, `')'`, `'{'`, `'}'`, `'['` and `']'`, determine if the input string is valid.
 
@@ -8,7 +16,26 @@ An input string is valid if:
 - Open brackets must be closed in the correct order.
 - Every close bracket has a corresponding open bracket of the same type.doc
 
-## Approach : Stack
+### Examples
+```text
+Input: s = "()"
+Output: true
+
+Input: s = "()[]{}"
+Output: true
+
+Input: s = "(]"
+Output: false
+
+Input: s = "([])"
+Output: true
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+Stack
  * We maintain count of open and close brackets, when both count is zero we get a possible answer, store in list/array;
  * we know that first bracket will always be an "Open bracket", hence we remove the possiblity of starting with close bracket.
 
@@ -26,10 +53,10 @@ Input: s = "([])"
 Output: true
 ```
 
-```java
+```
 /**
- * Time : O(N)
- * Space : O(N)
+ * 
+ * 
  *
 */
 class Solution {
@@ -47,8 +74,28 @@ class Solution {
     }
 }
 ```
-## Approach : Regex
+
 - loop upto mid and use regex;
+```
+/**
+ * 
+ * 
+ */
+class Solution {
+    public boolean isValid(String s) {
+        int l = s.length()/2;
+        while(l-- > 0){
+            s = s.replaceAll("\\(\\)|\\{\\}|\\[\\]","");
+        }
+        return s.isEmpty();
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 /**
  * Time : n/2
@@ -64,3 +111,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N) | [Provide justification] |
+| **Space Complexity** | O(N) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

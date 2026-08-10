@@ -1,4 +1,12 @@
-# [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+# Remove Duplicates from Sorted Array
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Two Pointers  
+> **Link:** [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
@@ -21,7 +29,8 @@ assert nums[i] == expectedNums[i];
 }
 If all assertions pass, then your solution will be accepted.
 
-```
+### Examples
+```text
 Example 1:
 
 Input: nums = [1,1,2]
@@ -37,7 +46,30 @@ Explanation: Your function should return k = 5, with the first five elements of 
 It does not matter what you leave beyond the returned k (hence they are underscores).
 ```
 
-## Approach : Two Pointers
+---
+
+## 💡 Intuition & Core Approach
+
+Two Pointers
+
+```
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        int i =0;
+        for (int j = 1; j < nums.length; j++) {
+            if(nums[j] != nums[i]){
+                nums[i+1] = nums[j];
+                i++;
+            }
+        }
+        return i+1;
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -53,3 +85,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

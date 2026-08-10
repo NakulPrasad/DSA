@@ -1,8 +1,17 @@
-# [Power Set](https://www.geeksforgeeks.org/problems/power-set4302/1)
+# Power Set
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Recursion  
+> **Link:** [Power Set](https://www.geeksforgeeks.org/problems/power-set4302/1)
+
+---
+
+## 📝 Problem Statement
 
 Given a string s of length n, find all the possible non-empty subsequences of the string s in lexicographically-sorted order.
 
-```
+### Examples
+```text
 Input :
 s = "abc"
 Output:
@@ -24,11 +33,18 @@ Expected Time Complexity: O( n*2n  )
 Expected Space Complexity: O( n * 2n )
 ```
 
-```
-Constraints:
-1 <= n <= 16
-s constitutes of lower case english alphabets
-```
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -61,3 +77,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(2^N) | [Provide justification] |
+| **Space Complexity** | O(N) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

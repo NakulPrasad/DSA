@@ -1,5 +1,12 @@
 # Q.2 [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)
 
+> **Difficulty:** Medium  
+> **Topic / Pattern:** PrefixSum  
+
+---
+
+## 📝 Problem Statement
+
 Given a 2D matrix matrix, handle multiple queries of the following type:
 
 Calculate the sum of the elements of matrix inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
@@ -9,26 +16,66 @@ NumMatrix(int[][] matrix) Initializes the object with the integer matrix matrix.
 int sumRegion(int row1, int col1, int row2, int col2) Returns the sum of the elements of matrix inside the rectangle defined by its upper left corner (row1, col1) and lower right corner (row2, col2).
 You must design an algorithm where sumRegion works on O(1) time complexity.
 
-### 🔍 Algorithm
-
+### Examples
+```text
+Input: 
+Output: 
 ```
 
-+---------------+   +---------+----+   +---+-----------+   +---------+----+   +---+----------+
-|               |   |         |    |   |   |           |   |         |    |   |   |          |
-|   (r1,c1)     |   |         |    |   |   |           |   |         |    |   |   |          |
-|   +------+    |   |         |    |   |   |           |   +---------+    |   +---+          |
-|   |      |    | = |         |    | - |   |           | - |      (r1,c2) | + |   (r1,c1)    |
-|   |      |    |   |         |    |   |   |           |   |              |   |              |
-|   +------+    |   +---------+    |   +---+           |   |              |   |              |
-|        (r2,c2)|   |       (r2,c2)|   |   (r2,c1)     |   |              |   |              |
-+---------------+   +--------------+   +---------------+   +--------------+   +--------------+
+---
 
+## 💡 Intuition & Core Approach
 
-```
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
 
-### 🧾 Pseudo-Code (handle edge case)
+---
+
+## 💻 Implementation (Java)
 
 ```java
+import java.util.Arrays;
+
+class NumMatrix {
+    int[][] prefix;
+
+    public NumMatrix(int[][] matrix) {
+        int n = matrix.length;
+        int m = matrix[0].length;
+        prefix = new int[n+1][m+1];
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= m; j++) {
+                prefix[i][j] = matrix[i-1][j-1] + prefix[i-1][j] + prefix[i][j-1] - prefix[i-1][j-1];
+            }
+        }
+    }
+
+    public int sumRegion(int row1, int col1, int row2, int col2) {
+
+        return prefix[row2+1][col2+1] - prefix[row1][col2+1]- prefix[row2+1][col1] + prefix[row1][col1];
+    }
+}
+```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+)
+
+```
 Class NumMatrix:
 
     Method __init__(matrix):
@@ -54,9 +101,9 @@ Class NumMatrix:
 
 ```
 
-### Pseudo-Code
 
-```java
+
+```
 // make prefix array of n+1 to not handle edge cases.
 Class NumMatrix:
 
@@ -85,7 +132,7 @@ Class NumMatrix:
 
 ```
 
-```java
+```
 import java.util.Arrays;
 
 class NumMatrix {

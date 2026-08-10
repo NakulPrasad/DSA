@@ -1,4 +1,12 @@
-# [Majority Elements](https://leetcode.com/problems/majority-element/description/)
+# Majority Elements
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Majority Elements](https://leetcode.com/problems/majority-element/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an array `nums` of size `n`, return _the majority element_.
 
@@ -22,9 +30,19 @@ The majority element is the element that appears more than `⌊n / 2⌋` times. 
 
 **Follow-up:** Could you solve the problem in linear time and in `O(1)` space?
 
-## Approach : voting algo
+### Examples
+```text
+Input: 
+Output: 
+```
 
-```java
+---
+
+## 💡 Intuition & Core Approach
+
+voting algo
+
+```
 public class Solution {
     public int majorityElement(int[] nums) {
         int maje = -1, count = 1;
@@ -47,7 +65,21 @@ public class Solution {
 
 ```
 
-## Approach : Sorting
+
+
+```
+class Solution {
+    public int majorityElement(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length;
+        return nums[n/2];
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -58,3 +90,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

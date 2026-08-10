@@ -1,4 +1,12 @@
-# [Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/)
+# Container With Most Water
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Two Pointers  
+> **Link:** [Container With Most Water](https://leetcode.com/problems/container-with-most-water/description/)
+
+---
+
+## 📝 Problem Statement
 
 You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).
 
@@ -8,7 +16,8 @@ Return the maximum amount of water a container can store.
 
 Notice that you may not slant the container.
 
-```
+### Examples
+```text
 Input: height = [1,8,6,2,5,4,8,3,7]
 Output: 49
 Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
@@ -16,6 +25,19 @@ Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,
 Input: height = [1,1]
 Output: 1
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -49,3 +71,19 @@ class Solution {
 
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N) | [Provide justification] |
+| **Space Complexity** | O(1) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,9 +1,18 @@
 # 3. [ThreeSUM](https://leetcode.com/problems/3sum/description/)
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Two Pointers  
+
+---
+
+## 📝 Problem Statement
+
 Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 
 Notice that the solution set must not contain duplicate triplets.
- 
-```
+
+### Examples
+```text
 Input: nums = [-1,0,1,2,-1,-4]
 Output: [[-1,-1,2],[-1,0,1]]
 Explanation: 
@@ -21,12 +30,17 @@ Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 ```
-## Approach : Bruteforce
-```java
+
+---
+
+## 💡 Intuition & Core Approach
+
+Bruteforce
+```
 /**
  * Approach : Bruteforce
- * Time : O(N3)
- * Space : O(N)
+ * 
+ * 
 */
 public List<List<Integer>> threeSum(int[] nums) {
     List<List<Integer>> result = new ArrayList<>();
@@ -51,11 +65,54 @@ public List<List<Integer>> threeSum(int[] nums) {
 }
 ```
 
-## Approach : Two Pointers
+
 
 - Using Logic of two sum : 
 - nums[i] + nums[j] + nums[k] == 0.
 - nums[i] + nums[j] == -nums[k] (target).
+
+```
+/**
+ * Approach : Two Pointers
+ * For each i, j=i+1 and r=last element
+ * 
+ * 
+class Solution {
+    public List<List<Integer>> threeSum(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums); // Step 1: Sort the array
+
+        int n = nums.length;
+        //Step 2 : remove duplicates
+        Set<List<Integer>> set = new HashSet<>();
+        for (int i = 0; i < n - 2; i++) {
+
+            int target = -nums[i];
+            int l = i + 1;
+            int r = n - 1;
+
+            while (l < r) {
+                int sum = nums[l] + nums[r];
+                if (sum == target) {
+                    set.add(Arrays.asList(nums[i], nums[l], nums[r]));
+                    l++;
+                    r--;
+                } else if (sum < target) {
+                    l++;
+                } else {
+                    r--;
+                }
+            }
+        }
+        ans.addAll(set);
+        return ans;
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -96,3 +153,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N3) | [Provide justification] |
+| **Space Complexity** | O(N) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

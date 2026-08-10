@@ -1,4 +1,12 @@
-# [Implement Queue using Stack](https://leetcode.com/problems/implement-queue-using-stacks/)
+# Implement Queue using Stack
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** StackAndQueue  
+> **Link:** [Implement Queue using Stack](https://leetcode.com/problems/implement-queue-using-stacks/)
+
+---
+
+## 📝 Problem Statement
 
 Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (`push`, `peek`, `pop`, and `empty`).
 
@@ -25,6 +33,25 @@ Implement the `MyQueue` class:
 - All the calls to `pop` and `peek` are valid.
 
 **Follow-up:** Can you implement the queue such that each operation is **[amortized](https://en.wikipedia.org/wiki/Amortized_analysis)** `O(1)` time complexity? In other words, performing `n` operations will take overall `O(n)` time even if one of those operations may take longer.
+
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class MyQueue {
@@ -71,3 +98,19 @@ class MyQueue {
  * boolean param_4 = obj.empty();
  */
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

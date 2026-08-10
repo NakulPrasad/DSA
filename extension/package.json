@@ -1,0 +1,65 @@
+{
+  "name": "dsa-note-helper",
+  "displayName": "DSA Note Helper",
+  "description": "Auto-formatting note template, flags placeholders, and auto-fills using AI.",
+  "version": "0.1.0",
+  "publisher": "nakul",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "dsa-helper.enforceTemplate",
+        "title": "DSA Note: Enforce Template"
+      },
+      {
+        "command": "dsa-helper.fillDetails",
+        "title": "DSA Note: Fill Details with AI"
+      }
+    ],
+    "configuration": {
+      "title": "DSA Note Helper",
+      "properties": {
+        "dsa-helper.aiProvider": {
+          "type": "string",
+          "default": "gemini",
+          "enum": ["gemini", "ollama"],
+          "description": "AI provider to use for filling details."
+        },
+        "dsa-helper.geminiApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API Key for Gemini. (Required if provider is gemini)"
+        },
+        "dsa-helper.ollamaUrl": {
+          "type": "string",
+          "default": "http://localhost:11434",
+          "description": "Endpoint URL for local Ollama server."
+        },
+        "dsa-helper.ollamaModel": {
+          "type": "string",
+          "default": "llama3",
+          "description": "Ollama model name (e.g. llama3, mistral)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.7",
+    "@types/vscode": "^1.75.0",
+    "typescript": "^4.9.5"
+  }
+}

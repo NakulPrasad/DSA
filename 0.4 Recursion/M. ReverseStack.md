@@ -1,21 +1,36 @@
-# [Reverse Stack](https://www.geeksforgeeks.org/problems/reverse-a-stack/1)
+# Reverse Stack
 
-```
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Recursion  
+> **Link:** [Reverse Stack](https://www.geeksforgeeks.org/problems/reverse-a-stack/1)
+
+---
+
+## 📝 Problem Statement
+
+[Insert problem description here]
+
+### Examples
+```text
 Input: st[] = [1, 2, 3, 4]
 Output: [1, 2, 3, 4]
 Explanation: After reversing, the elements of stack are in opposite order.
 ```
 
-## Approach : Recursion
+---
 
-### Intitution
+## 💡 Intuition & Core Approach
+
+Recursion
+
+
 - Remove all elements one by one using recursion.
 - While recursion is returning (backtracking), insert each removed element at the bottom of the stack.
 - Repeating this for every element automatically reverses the order.
 
-```java
-// Time : O(N^2)
-// Space : O(n);
+```
+// 
+// 
 
 FUNCTION reverseStack(stack)
 
@@ -59,3 +74,27 @@ FUNCTION insertAtBottom(stack, element)
 END FUNCTION
 
 ```
+
+---
+
+## 💻 Implementation (Java)
+
+```java
+// Solution code here
+```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N^2) | [Provide justification] |
+| **Space Complexity** | O(n); | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

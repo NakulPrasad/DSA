@@ -1,13 +1,35 @@
 # Next Smaller Element Left
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** StackAndQueue  
+
+---
+
+## 📝 Problem Statement
+
 For each element in array print the next greatest element of it's left.
 
-```
+### Examples
+```text
 input : arr[] = [4, 8, 5, 2, 25]
 output : [-1, -1, 8, 5, -1]
 
 Input: arr[] = [1, 3, 2, 4]
 output : [-1, -1, 3, -1]
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 import java.util.*;
@@ -41,3 +63,19 @@ public class Main
 	
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

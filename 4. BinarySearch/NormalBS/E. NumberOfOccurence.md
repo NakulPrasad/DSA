@@ -1,7 +1,17 @@
-# [Number of occurrence](https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1)
-Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[]. 
+# Number of occurrence
 
-```java
+> **Difficulty:** Easy  
+> **Topic / Pattern:** BinarySearch  
+> **Link:** [Number of occurrence](https://www.geeksforgeeks.org/problems/number-of-occurrence2259/1)
+
+---
+
+## 📝 Problem Statement
+
+Given a sorted array, arr[] and a number target, you need to find the number of occurrences of target in arr[].
+
+### Examples
+```text
 Input: arr[] = [1, 1, 2, 2, 2, 2, 3], target = 2
 Output: 4
 Explanation: target = 2 occurs 4 times in the given array so the output is 4.
@@ -14,6 +24,20 @@ Input: arr[] = [8, 9, 10, 12, 12, 12], target = 12
 Output: 3
 Explanation: target = 12 occurs 3 times in the given array so the output is 3
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 class Solution {
     int count(int[] arr, int n, int x) {
@@ -56,3 +80,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

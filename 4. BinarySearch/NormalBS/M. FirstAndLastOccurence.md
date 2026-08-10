@@ -1,10 +1,19 @@
-# [Find first and last positions of an element](https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1)
+# Find first and last positions of an element
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** BinarySearch  
+> **Link:** [Find first and last positions of an element](https://www.geeksforgeeks.org/problems/first-and-last-occurrences-of-x3116/1)
+
+---
+
+## 📝 Problem Statement
 
 Given a sorted array arr[] with possibly some duplicates, the task is to find the first and last occurrences of an element x in the given array.
 
 Note: If the number x is not found in the array then return both the indices as -1.
 
-```
+### Examples
+```text
 Input : arr[] = [1, 3, 5, 5, 5, 5, 67, 123, 125], x = 5
 Output : 2 5
 Explanation: First occurrence of 5 is at index 2 and last occurrence of 5 is at index 5
@@ -19,62 +28,26 @@ Input: arr[] = [1, 2, 3], x = 4
 Output: -1 -1
 Explanation: No occurrence of 4 in the array, so, output is [-1, -1]
 ```
-![image](images/BS_4.1.jpg)
 
+---
 
-```java
-class GFG {
-    ArrayList<Integer> find(int arr[], int x) {
-        // code here
-        ArrayList<Integer> list = new ArrayList<>();
-        int first = firstOccurence(arr, x);
-        int last = lastOccurence(arr, x);
-        list.add(first);
-        list.add(last);
-        return list;
-    }
-    public int firstOccurence(int arr[], int x){
-        int l=0, r=arr.length-1;
-        int idx = -1;
-        while(l<=r){
-            int mid = l + (r-l)/2;
-            if(arr[mid] == x){
-                idx = mid; //this modify from original bs
-                r = mid-1; //this modify from original bs
-                
-            }
-            else if(arr[mid]<x){
-                l = mid+1;
-            }
-            else {
-                r = mid-1;
-            }
-        }
-        return idx;
-    }
-    public int lastOccurence(int arr[], int x){
-        int l=0, r=arr.length-1;
-        int idx = -1;
-        while(l<=r){
-            int mid = l + (r-l)/2;
-            if(arr[mid] == x){
-                idx = mid; //this modify from original bs
-                l = mid+1; //this modify from original bs
-                
-            }
-            else if(arr[mid]<x){
-                l = mid+1;
-            }
-            else {
-                r = mid-1;
-            }
-        }
-        return idx;
-    }
-}
+## 💡 Intuition & Core Approach
 
-```
-## In Single Loop
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](images/BS_4.1.jpg)
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 class GFG {
     ArrayList<Integer> find(int arr[], int x) {
@@ -118,5 +91,20 @@ class GFG {
     
     }
 }
-
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

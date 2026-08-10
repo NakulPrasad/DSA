@@ -1,8 +1,17 @@
-# [Decimal To Binary](https://www.geeksforgeeks.org/problems/decimal-to-binary-1587115620/1)
+# Decimal To Binary
+
+> **Difficulty:** Basic  
+> **Topic / Pattern:** Maths  
+> **Link:** [Decimal To Binary](https://www.geeksforgeeks.org/problems/decimal-to-binary-1587115620/1)
+
+---
+
+## 📝 Problem Statement
 
 Given a decimal number n, return its binary equivalent.
 
-```
+### Examples
+```text
 Input: n = 12
 Output: 1100
 Explanation: The binary representation of 12 is "1100", since 12 = 1×2^3 + 1×2^2 + 0×2^1 + 0×2^0
@@ -12,12 +21,11 @@ Output: 100001
 Explanation: The binary representation of 33 is "100001", since 33 = 1×2^5 + 0×2^4 + 0×2^3 + 0×2^2 + 0×2^1 + 1×2^0
 ```
 
-```
-Constraints:
-1 ≤ n ≤ 2^31 - 1
-```
+---
 
-## Approach: Divide
+## 💡 Intuition & Core Approach
+
+Divide
 
 To calculate Binary :
 
@@ -40,7 +48,7 @@ Now reverse: 1101
 👉 So, 13 (decimal) = 1101 (binary)
 ```
 
-## Approach : Bitwise
+
 
 ```
 Instead of % 2, we use:
@@ -55,6 +63,26 @@ Rule of &:
 0 & 1 = 0
 0 & 0 = 0
 ```
+
+```
+public class DecimalToBinary {
+    public static void main(String[] args) {
+        int n = 13;
+        String binary = "";
+
+        while (n > 0) {
+            binary = (n & 1) + binary;
+            n = n >> 1;
+        }
+
+        System.out.println(binary);
+    }
+}
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 public class DecimalToBinary {
@@ -71,3 +99,19 @@ public class DecimalToBinary {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,4 +1,12 @@
-# [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/description/)
+# Concatenation of Array
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Concatenation of Array](https://leetcode.com/problems/concatenation-of-array/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an integer array `nums` of length `n`, you want to create an array `ans` of length `2n` where `ans[i] == nums[i]` and `ans[i + n] == nums[i]` for `0 <= i < n` (**0-indexed**).
 
@@ -20,6 +28,25 @@ Return _the array _`ans`.
 - `1 <= n <= 1000`
 - `1 <= nums[i] <= 1000`
 
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 class Solution {
     public int[] getConcatenation(int[] nums) {
@@ -34,3 +61,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

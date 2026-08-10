@@ -1,17 +1,41 @@
-# [Set Matrix Zeros](https://leetcode.com/problems/set-matrix-zeroes/description/)
+# Set Matrix Zeros
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Set Matrix Zeros](https://leetcode.com/problems/set-matrix-zeroes/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's.
 
 You must do it in place.
 
-## Example 1:
-
-![alt text](https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg)
-
-```
+### Examples
+```text
 Input: matrix = [[1,1,1],[1,0,1],[1,1,1]]
 Output: [[1,0,1],[0,0,0],[1,0,1]]
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg)
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -55,5 +79,20 @@ class Solution {
         }
     }
 }
-
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | (m | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

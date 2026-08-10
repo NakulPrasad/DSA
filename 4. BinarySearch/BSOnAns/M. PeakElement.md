@@ -1,4 +1,12 @@
 # Binary Search on Answers
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** BinarySearch  
+
+---
+
+## 📝 Problem Statement
+
 Earlier, we know binary search is applied only on sorted arrays, but in some cases this can be applied to unsorted arrays.
 
 We use some break condition instead of (arr[mid] == target)
@@ -13,7 +21,8 @@ You may imagine that nums[-1] = nums[n] = -∞. In other words, an element is al
 
 You must write an algorithm that runs in O(log n) time.
 
-```java
+### Examples
+```text
 Example 1:
 
 Input: nums = [1,2,3,1]
@@ -26,7 +35,25 @@ Input: nums = [1,2,1,3,5,6,4]
 Output: 5
 Explanation: Your function can return either index number 1 where the peak element is 2, or index number 5 where the peak element is 6.
 ```
-![image](images/peak_element-0.jpg)
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](images/peak_element-0.jpg)
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -65,3 +92,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

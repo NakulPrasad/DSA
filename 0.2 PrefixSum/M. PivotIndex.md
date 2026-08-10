@@ -1,4 +1,12 @@
-# [Pivot Index](https://leetcode.com/problems/find-pivot-index/description/)
+# Pivot Index
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** PrefixSum  
+> **Link:** [Pivot Index](https://leetcode.com/problems/find-pivot-index/description/)
+
+---
+
+## 📝 Problem Statement
 
 Given an array of integers nums, calculate the pivot index of this array.
 
@@ -8,7 +16,8 @@ If the index is on the left edge of the array, then the left sum is 0 because th
 
 Return the leftmost pivot index. If no such index exists, return -1.
 
-```java
+### Examples
+```text
 Input: nums = [1,7,3,6,5,6]
 Output: 3
 Explanation:
@@ -16,6 +25,19 @@ The pivot index is 3.
 Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
 Right sum = nums[4] + nums[5] = 5 + 6 = 11
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -43,10 +65,17 @@ class Solution {
 }
 ```
 
-Time : O(1)
+---
 
-Space: O(n)
+## 📊 Complexity Analysis
 
-EdgeCase :
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(1) | [Provide justification] |
+| **Space Complexity** | O(n) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
 
 1. [-1,-1,-1,-1,0,1]

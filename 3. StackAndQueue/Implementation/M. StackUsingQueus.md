@@ -1,4 +1,12 @@
-# [Stack Using Queues](https://leetcode.com/problems/implement-stack-using-queues/description/)
+# Stack Using Queues
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** StackAndQueue  
+> **Link:** [Stack Using Queues](https://leetcode.com/problems/implement-stack-using-queues/description/)
+
+---
+
+## 📝 Problem Statement
 
 Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (`push`, `top`, `pop`, and `empty`).
 
@@ -26,8 +34,26 @@ Implement the `MyStack` class:
 
 **Follow-up:** Can you implement the stack using only one queue?
 
-```java
+### Examples
+```text
+Input: 
+Output: 
+```
 
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
+```java
 class MyStack {
 
     private Queue<Integer> que = new LinkedList<>();
@@ -60,3 +86,19 @@ class MyStack {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

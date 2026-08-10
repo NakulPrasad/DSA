@@ -1,4 +1,12 @@
-# [Design Hashset](https://leetcode.com/problems/design-hashset/description/)
+# Design Hashset
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Design Hashset](https://leetcode.com/problems/design-hashset/description/)
+
+---
+
+## 📝 Problem Statement
 
 Design a HashSet without using any built-in hash table libraries.
 
@@ -17,11 +25,59 @@ Implement `MyHashSet` class:
 - `0 <= key <= 10`
 - At most `10` calls will be made to `add`, `remove`, and `contains`.
 
-## Approach : Array
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+Array
 
 - insert value of key at arr[key] index;
 - You can sort the array and use binary search to decrase memory O(k) and time O(logN); but insert at middle becomes challenging.
 - Think if we can save in BST ?
+
+```
+/**
+ * 
+ * 
+ */
+class MyHashSet {
+    int arr[];
+    public MyHashSet() {
+         arr = new int[1000001];
+         arr[0] =-1;
+    }
+
+    public void add(int key) {
+        arr[key] = key;
+    }
+
+    public void remove(int key) {
+        arr[key] = 0;
+    }
+
+    public boolean contains(int key) {
+        return arr[key] == key;
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -56,3 +112,19 @@ class MyHashSet {
  * boolean param_3 = obj.contains(key);
  */
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(1) | [Provide justification] |
+| **Space Complexity** | O(1) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

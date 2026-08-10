@@ -1,4 +1,13 @@
-# [Min Stack](https://leetcode.com/problems/min-stack/)
+# Min Stack
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** StackAndQueue  
+> **Link:** [Min Stack](https://leetcode.com/problems/min-stack/)
+
+---
+
+## 📝 Problem Statement
+
 Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
 Implement the MinStack class:
@@ -10,31 +19,25 @@ Implement the MinStack class:
 - int getMin() retrieves the minimum element in the stack.
 - You must implement a solution with O(1) time complexity for each function.
 
+### Examples
+```text
+Input: 
+Output: 
 ```
-Input
-["MinStack","push","push","push","getMin","pop","top","getMin"]
-[[],[-2],[0],[-3],[],[],[],[]]
 
-Output
-[null,null,null,null,-3,null,0,-2]
+---
 
-Explanation
-MinStack minStack = new MinStack();
-minStack.push(-2);
-minStack.push(0);
-minStack.push(-3);
-minStack.getMin(); // return -3
-minStack.pop();
-minStack.top();    // return 0
-minStack.getMin(); // return -2
-``` 
-```
-Constraints:
+## 💡 Intuition & Core Approach
 
--231 <= val <= 231 - 1
-Methods pop, top and getMin operations will always be called on non-empty stacks.
-At most 3 * 104 calls will be made to push, pop, top, and getMin.
-```
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 class MinStack {
     Stack<Integer> normal = new Stack<>();
@@ -80,3 +83,19 @@ class MinStack {
  * int param_4 = obj.getMin();
  */
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

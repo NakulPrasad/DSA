@@ -1,30 +1,34 @@
-# [Check Palindrome](https://www.geeksforgeeks.org/problems/palindrome0746/1)
+# Check Palindrome
 
-```java
-/*
- * Approach : Two Pointers
- * Intution:
- * One pointer at first index another at last, simultaneously compare each letter 
- * 
- * Time Complexity : O(N/2)
- * Space Complexity : O(1)
- */
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Maths  
+> **Link:** [Check Palindrome](https://www.geeksforgeeks.org/problems/palindrome0746/1)
 
-class CheckPalindrome {
-    public boolean isPalindrome(int x) {
-        var s = String.valueOf(x);
-        var r = s.length() - 1;
-        var l = 0;
+---
 
-        while (l < r) {
-            if (s.charAt(l++) != s.charAt(r--))
-                return false;
+## 📝 Problem Statement
 
-        }
-        return true;
-    }
-}
+[Insert problem description here]
+
+### Examples
+```text
+Input: 
+Output: 
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 /*
  * Approach : Reverse Number
@@ -59,3 +63,19 @@ class CheckPalindrome {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,13 +1,43 @@
-# [Sprial Matrix](https://leetcode.com/problems/spiral-matrix/description/)
+# Sprial Matrix
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Sprial Matrix](https://leetcode.com/problems/spiral-matrix/description/)
+
+---
+
+## 📝 Problem Statement
+
 Given an m x n matrix, return all elements of the matrix in spiral order.
 
 Example 1:
 ---
 ![alt text](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg)
-```
+
+### Examples
+```text
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [1,2,3,6,9,8,7,4,5]
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](https://assets.leetcode.com/uploads/2020/11/13/spiral1.jpg)
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 public class SpiralMatrix {
@@ -57,3 +87,19 @@ public class SpiralMatrix {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,10 +1,18 @@
 # Q.16 [Find Maximum Element in bitonic array](https://www.geeksforgeeks.org/problems/maximum-value-in-a-bitonic-array3001/1)
 
+> **Difficulty:** Medium  
+> **Topic / Pattern:** BinarySearch  
+
+---
+
+## 📝 Problem Statement
+
 Given a bitonic array find the maximum value of the array.
 
 Bitonic means first increasing then decreasing.
 
-```java
+### Examples
+```text
 Input: 1 4 8 3 2
 Output: 8
 
@@ -17,6 +25,19 @@ Output: 50
 Input: arr[] = [120, 100, 80, 20, 0]
 Output: 120
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 // User function Template for Java
@@ -58,3 +79,19 @@ class Solution {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

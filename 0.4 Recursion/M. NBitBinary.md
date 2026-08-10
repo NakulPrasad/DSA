@@ -1,7 +1,17 @@
-# [N-bit binary numbers](https://www.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1)
+# N-bit binary numbers
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Recursion  
+> **Link:** [N-bit binary numbers](https://www.geeksforgeeks.org/problems/print-n-bit-binary-numbers-having-more-1s-than-0s0252/1)
+
+---
+
+## 📝 Problem Statement
 
 Given a positive integer n. Your task is to generate a string list of all n-bit binary numbers where, for any prefix of the number, there are more or an equal number of 1's than 0's. The numbers should be sorted in decreasing order of magnitude.
-```
+
+### Examples
+```text
 Example 1:
 
 Input:  
@@ -29,17 +39,52 @@ Your task is to complete the function NBitBinary() which takes a single integer 
 Expected Time Complexity: O(|2n|)
 Expected Auxiliary Space: O(2n)
 ```
-```
-Constraints:
-1 <= n <= 15
-```
-## Approach : Recursion
+
+---
+
+## 💡 Intuition & Core Approach
+
+Recursion
 
 - Observation:
 - Zero is added only if ones are one more than count of zero.
 
 - Common Error:
 - On recursion pass n-1 than n--;
+
+```
+class Solution {
+/**
+ * 
+ * 
+ */
+    ArrayList<String> NBitBinary(int n) {
+        ArrayList<String> ans = new ArrayList<>();
+        solve("", 0, 0, ans, n);
+        return ans;
+    }
+
+    void solve(String output, int zero, int one, ArrayList<String> ans, int n) {
+        if (n == 0) {
+            ans.add(output);
+            return;
+        }
+
+        // Always add '1'
+        solve(output + "1", zero, one + 1, ans, n - 1);
+
+        // Add '0' only if ones are greater than zeros
+        if (one > zero) {
+            solve(output + "0", zero + 1, one, ans, n - 1);
+        }
+    }
+}
+
+```
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class Solution {
@@ -68,5 +113,20 @@ class Solution {
         }
     }
 }
-
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | (2^N) | [Provide justification] |
+| **Space Complexity** | O(2n) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

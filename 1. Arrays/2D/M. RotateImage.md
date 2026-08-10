@@ -1,14 +1,42 @@
-# [Rotate IMage](https://leetcode.com/problems/rotate-image/description/)
+# Rotate IMage
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Arrays  
+> **Link:** [Rotate IMage](https://leetcode.com/problems/rotate-image/description/)
+
+---
+
+## 📝 Problem Statement
+
 You are given an n x n 2D matrix representing an image, rotate the image by 90 degrees (clockwise).
 
 You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
 
-### Example 1 :
-![alt text](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
-```
+### Examples
+```text
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[7,4,1],[8,5,2],[9,6,3]]
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](https://assets.leetcode.com/uploads/2020/08/28/mat1.jpg)
+
+---
+
+## 💻 Implementation (Java)
+
 ```java
 public class MatrixRotation {
 
@@ -45,3 +73,19 @@ public class MatrixRotation {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

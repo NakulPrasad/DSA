@@ -1,22 +1,29 @@
-# [Fibbonacci](https://leetcode.com/problems/fibonacci-number/)
+# Fibbonacci
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Recursion  
+> **Link:** [Fibbonacci](https://leetcode.com/problems/fibonacci-number/)
+
+---
+
+## 📝 Problem Statement
 
 The Fibonacci numbers, commonly denoted F(n) form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,
 
-```
-F(0) = 0, F(1) = 1
-F(n) = F(n - 1) + F(n - 2), for n > 1.
-Given n, calculate F(n).
-```
-
-```
+### Examples
+```text
 Input: n = 4
 Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 ```
 
-## Approach : Iterative
+---
 
-```java
+## 💡 Intuition & Core Approach
+
+Iterative
+
+```
 class Solution {
     public int fib(int n) {
         int prev = 0;
@@ -35,12 +42,12 @@ class Solution {
 }
 ```
 
-## Approach : Recursion
 
-Time : O(N+1)
-Space : O(N+1)
 
-```java
+
+
+
+```
 class Solution {
     public int fib(int n) {
         return helper(n);
@@ -54,3 +61,37 @@ class Solution {
 }
 
 ```
+
+---
+
+## 💻 Implementation (Java)
+
+```java
+class Solution {
+    public int fib(int n) {
+        return helper(n);
+
+    }
+    int helper(int n){
+        if(n<=1)
+            return n;
+        return fib(n-2)+fib(n-1);
+    }
+}
+```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(N+1) | [Provide justification] |
+| **Space Complexity** | O(N+1) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

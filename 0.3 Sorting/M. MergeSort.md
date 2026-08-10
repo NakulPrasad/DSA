@@ -1,4 +1,12 @@
-# [Merge Sort](https://www.naukri.com/code360/problems/merge-sort_920442?leftPanelTabValue=PROBLEM)
+# Merge Sort
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** Sorting  
+> **Link:** [Merge Sort](https://www.naukri.com/code360/problems/merge-sort_920442?leftPanelTabValue=PROBLEM)
+
+---
+
+## 📝 Problem Statement
 
 Problem statement
 Given a sequence of numbers ‘ARR’. Your task is to return a sorted sequence of ‘ARR’ in non-descending order with help of the merge sort algorithm.
@@ -14,44 +22,41 @@ Note :
 It is compulsory to use the ‘Merge Sort’ algorithm.
 Detailed explanation ( Input/output format, Notes, Images )
 
-```
-Constraints :
-1 <= T <= 50
-1 <= N <= 10^4
--10^9 <= arr[i] <= 10^9
-
-Time Limit : 1 sec
+### Examples
+```text
+Input: 
+Output: 
 ```
 
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
+
+```java
+// Solution code here
 ```
-Sample Input 1 :
-2
-7
-3 4 1 6 2 5 7
-4
-4 3 1 2
-Sample Output 1 :
-1 2 3 4 5 6 7
-1 2 3 4
-Explanation For Sample Input 1:
-Test Case 1 :
 
-Given ‘ARR’ : { 3, 4, 1, 6, 2, 5, 7 }
+---
 
-Then sorted 'ARR' in non-descending order will be : { 1, 2, 3, 4, 5, 6, 7 }. Non-descending order means every element must be greater than or equal to the previse element.
+## 📊 Complexity Analysis
 
-Test Case 2 :
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
 
-Given ‘ARR’ : { 4, 3, 1, 2 }
+---
 
-Then sorted 'ARR' in non-descending order will be : { 1, 2, 3, 4 }.
-Sample Input 2 :
-2
-4
-5 4 6 7
-3
-2 1 1
-Sample Output 2 :
-4 5 6 7
-1 1 2
-```
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

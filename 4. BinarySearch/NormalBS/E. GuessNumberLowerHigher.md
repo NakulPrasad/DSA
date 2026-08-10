@@ -1,4 +1,13 @@
-# [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/description/)
+# Guess Number Higher or Lower
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** BinarySearch  
+> **Link:** [Guess Number Higher or Lower](https://leetcode.com/problems/guess-number-higher-or-lower/description/)
+
+---
+
+## 📝 Problem Statement
+
 We are playing the Guess Game. The game is as follows:
 
 I pick a number from 1 to n. You have to guess which number I picked.
@@ -12,6 +21,24 @@ You call a pre-defined API int guess(int num), which returns three possible resu
 - 0: your guess is equal to the number I picked (i.e. num == pick).
 - Return the number that I picked.
 
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 /**
@@ -54,3 +81,19 @@ public class Solution extends GuessGame {
     }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | O(logN) | [Provide justification] |
+| **Space Complexity** | O(1) | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

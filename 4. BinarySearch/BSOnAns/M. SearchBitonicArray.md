@@ -1,8 +1,16 @@
 # Q.17 Find an element in Bitonic array
 
-Given a bitonic sequence of n distinct elements, and an integer x, the task is to write a program to find given element x in the bitonic sequence in O(log n) time. 
+> **Difficulty:** Medium  
+> **Topic / Pattern:** BinarySearch  
 
-```java
+---
+
+## 📝 Problem Statement
+
+Given a bitonic sequence of n distinct elements, and an integer x, the task is to write a program to find given element x in the bitonic sequence in O(log n) time.
+
+### Examples
+```text
 Input :  arr[] = {-3, 9, 18, 20, 17, 5, 1}, key = 20
 Output : Found at index 3
 
@@ -10,6 +18,19 @@ Output : Found at index 3
 Input :  arr[] = {5, 6, 7, 8, 9, 10, 3, 2, 1}, key = 30
 Output : Not Found
 ```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 public class Main {
@@ -87,5 +108,20 @@ public class Main {
     }
   }
 }
-
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

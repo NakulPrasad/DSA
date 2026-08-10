@@ -1,4 +1,12 @@
 # Bucket Sort
+
+> **Difficulty:** Easy  
+> **Topic / Pattern:** Sorting  
+
+---
+
+## 📝 Problem Statement
+
 When a set of data is present within a range and uniformly distributed, we make buckets to store those elements. Later we sort those buckets and then join those sorted buckets. 
 
 Example : 
@@ -16,6 +24,32 @@ nums = [10 18 20 60 82 83 88 95]
 * create bucket list : list<list<characters>>
 * put elements of frequency map to the bucket list
 * Iterate from last as we want high freq first, pick each index list then iterate over the list to get the characters.
+
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 🎨 Visualization / Dry Run
+
+![visualization](./images/bucketSort-0.png)
+![visualization](./images/bucketSort-1.png)
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 import java.io.*;
@@ -69,3 +103,19 @@ class TUF {
   }
 }
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]

@@ -1,4 +1,12 @@
-# [Design Browser History](https://leetcode.com/problems/design-browser-history/description/)
+# Design Browser History
+
+> **Difficulty:** Medium  
+> **Topic / Pattern:** StackAndQueue  
+> **Link:** [Design Browser History](https://leetcode.com/problems/design-browser-history/description/)
+
+---
+
+## 📝 Problem Statement
 
 You have a browser of one tab where you start on the homepage and you can visit another url, get back in the history number of steps or move forward in the history number of steps.
 
@@ -8,6 +16,25 @@ Implement the BrowserHistory class:
 - void visit(string url) Visits url from the current page. It clears up all the forward history.
 - string back(int steps) Move steps back in history. If you can only return x steps in the history and steps > x, you will return only x steps. Return the current url after moving back in history at most steps.
 - string forward(int steps) Move steps forward in history. If you can only forward x steps in the history and steps > x, you will forward only x steps. Return the current url after forwarding in history at most steps.
+
+### Examples
+```text
+Input: 
+Output: 
+```
+
+---
+
+## 💡 Intuition & Core Approach
+
+* **The Core Idea:** [Insert core algorithmic intuition here]
+* **Key Steps:**
+  - [Step 1]
+  - [Step 2]
+
+---
+
+## 💻 Implementation (Java)
 
 ```java
 class BrowserHistory {
@@ -54,3 +81,19 @@ class BrowserHistory {
  * String param_3 = obj.forward(steps);
  */
 ```
+
+---
+
+## 📊 Complexity Analysis
+
+| Metric | Complexity | Explanation |
+| :--- | :--- | :--- |
+| **Time Complexity** | $O(1)$ | [Provide justification] |
+| **Space Complexity** | $O(1)$ | [Provide justification] |
+
+---
+
+## ⚠️ Edge Cases & Pitfalls to Avoid
+
+* **Edge Case 1:** [Describe edge case and handling]
+* **Edge Case 2:** [Describe edge case and handling]
