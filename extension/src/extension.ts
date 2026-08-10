@@ -2,6 +2,11 @@ import * as vscode from 'vscode';
 import { enforceTemplate } from './formatter';
 import { updateDiagnostics } from './linter';
 import { fillMissingDetails } from './aiService';
+import { DsaCodeActionProvider } from './codeActions';
+import { registerChatParticipant } from './chatParticipant';
+import { McqViewProvider } from './mcqView';
+import { DsaCompletionProvider } from './completionProvider';
+import { RevisionTreeProvider } from './revisionTree';
 import * as path from 'path';
 
 export function activate(context: vscode.ExtensionContext) {
@@ -36,113 +41,88 @@ export function activate(context: vscode.ExtensionContext) {
         }
     });
 
-    // 3. Register Linter / Diagnostics Collection
+    // 3. Register MCQ View Command
+    const mcqProvider = new McqViewProvider(context.extensionUri);
+    let startQuizCmd = vscode.commands.registerCommand('dsa-helper.startQuiz', async () => {
+        await vscode.commands.executeCommand('dsa-helper-quiz.focus');
+        await mcqProvider.generateQuiz();
+    });
+
+    let openQuizPanelCmd = vscode.commands.registerCommand('dsa-helper.openQuizPanel', () => {
+        mcqProvider.openFullPanel();
+    });
+
+    // 4. Register Linter / Diagnostics Collection
     const diagnosticCollection = vscode.languages.createDiagnosticCollection('dsa-note-helper');
     
-    // Lint on file open
     if (vscode.window.activeTextEditor && vscode.window.activeTextEditor.document.languageId === 'markdown') {
         updateDiagnostics(vscode.window.activeTextEditor.document, diagnosticCollection);
     }
     
-    // Lint on file change
     let changeListener = vscode.workspace.onDidChangeTextDocument((e) => {
         if (e.document.languageId === 'markdown') {
             updateDiagnostics(e.document, diagnosticCollection);
         }
     });
     
-    // Lint when active editor changes
     let editorChangeListener = vscode.window.onDidChangeActiveTextEditor((editor) => {
         if (editor && editor.document.languageId === 'markdown') {
             updateDiagnostics(editor.document, diagnosticCollection);
         }
     });
 
-    // 4. Register Auto-Template listener on file creation
+    // 5. Register Code Actions (Quick Fixes)
+    let codeActionProvider = vscode.languages.registerCodeActionsProvider(
+        'markdown',
+        new DsaCodeActionProvider(),
+        { providedCodeActionKinds: DsaCodeActionProvider.providedCodeActionKinds }
+    );
+
+    // 6. Register Chat Participant
+    registerChatParticipant(context);
+
+    // 7. Register MCQ Webview View
+    let webviewRegistration = vscode.window.registerWebviewViewProvider(
+        McqViewProvider.viewType,
+        mcqProvider
+    );
+
+    // 8. Register Inline Completion
+    let completionProvider = vscode.languages.registerInlineCompletionItemProvider(
+        [{ language: 'markdown' }, { language: 'java' }],
+        new DsaCompletionProvider()
+    );
+
+    // 9. Register Revision Tree View
+    const revisionTreeProvider = new RevisionTreeProvider();
+    let treeViewRegistration = vscode.window.registerTreeDataProvider(
+        'dsa-helper-revision',
+        revisionTreeProvider
+    );
+
+    let refreshTreeCmd = vscode.commands.registerCommand('dsa-helper.showRevisionTree', () => {
+        revisionTreeProvider.refresh();
+    });
+
+    // 10. Auto-Template on File Create
     let createListener = vscode.workspace.onDidCreateFiles(async (event) => {
         for (const fileUri of event.files) {
             if (fileUri.path.endsWith('.md')) {
                 const basename = path.basename(fileUri.fsPath);
-                // Standardize Title from filename (e.g. 'E. TwoSum.md' -> 'Two Sum')
                 let title = basename.replace(/^[EMHB]\.\s+/, "").replace(/\.md$/, "");
-                // Insert spacing before capital letters (e.g. 'TwoSum' -> 'Two Sum')
                 title = title.replace(/([A-Z])/g, ' $1').trim();
                 
                 let difficulty = "Easy";
-                if (basename.startsWith("M. ")) {
-                    difficulty = "Medium";
-                } else if (basename.startsWith("H. ")) {
-                    difficulty = "Hard";
-                } else if (basename.startsWith("B. ")) {
-                    difficulty = "Basic";
-                }
+                if (basename.startsWith("M. ")) difficulty = "Medium";
+                else if (basename.startsWith("H. ")) difficulty = "Hard";
+                else if (basename.startsWith("B. ")) difficulty = "Basic";
 
-                // Construct boilerplate template
-                const template = `# ${title}
-
-> **Difficulty:** ${difficulty}  
-> **Topic / Pattern:** [Topic]  
-> **Link:** [Platform](URL)
-
----
-
-## 📝 Problem Statement
-
-[Insert problem description here]
-
-### Examples
-\`\`\`text
-Input: 
-Output: 
-\`\`\`
-
----
-
-## 💡 Intuition & Core Approach
-
-* **The Core Idea:** [Insert core algorithmic intuition here]
-* **Key Steps:**
-  - [Step 1]
-  - [Step 2]
-
----
-
-## 🎨 Visualization / Dry Run
-
-[If applicable, embed visual diagram/illustration here]
-![visualization](images/image-name.png)
-
----
-
-## 💻 Implementation (Java)
-
-\`\`\`java
-class Solution {
-    // Write code here
-}
-\`\`\`
-
----
-
-## 📊 Complexity Analysis
-
-| Metric | Complexity | Explanation |
-| :--- | :--- | :--- |
-| **Time Complexity** | $O(N)$ | [Provide justification] |
-| **Space Complexity** | $O(1)$ | [Provide justification] |
-
----
-
-## ⚠️ Edge Cases & Pitfalls to Avoid
-
-* **Edge Case 1:** [Describe edge case and handling]
-`;
+                const template = `# ${title}\n\n> **Difficulty:** ${difficulty}  \n> **Topic / Pattern:** [Topic]  \n> **Link:** [Platform](URL)\n\n---\n\n## 📝 Problem Statement\n\n[Insert problem description here]\n\n### Examples\n\`\`\`text\nInput: \nOutput: \n\`\`\`\n\n---\n\n## 💡 Intuition & Core Approach\n\n* **The Core Idea:** [Insert core algorithmic intuition here]\n* **Key Steps:**\n  - [Step 1]\n  - [Step 2]\n\n---\n\n## 🎨 Visualization / Dry Run\n\n[If applicable, embed visual diagram/illustration here]\n![visualization](images/image-name.png)\n\n---\n\n## 💻 Implementation (Java)\n\n\`\`\`java\nclass Solution {\n    // Write code here\n}\n\`\`\`\n\n---\n\n## 📊 Complexity Analysis\n\n| Metric | Complexity | Explanation |\n| :--- | :--- | :--- |\n| **Time Complexity** | $O(N)$ | [Provide justification] |\n| **Space Complexity** | $O(1)$ | [Provide justification] |\n\n---\n\n## ⚠️ Edge Cases & Pitfalls to Avoid\n\n* **Edge Case 1:** [Describe edge case and handling]\n`;
 
                 const edit = new vscode.WorkspaceEdit();
                 edit.insert(fileUri, new vscode.Position(0, 0), template);
                 await vscode.workspace.applyEdit(edit);
                 
-                // Save document automatically
                 const doc = await vscode.workspace.openTextDocument(fileUri);
                 await doc.save();
             }
@@ -150,12 +130,10 @@ class Solution {
     });
 
     context.subscriptions.push(
-        enforceCmd, 
-        fillCmd, 
-        diagnosticCollection, 
-        changeListener, 
-        editorChangeListener,
-        createListener
+        enforceCmd, fillCmd, startQuizCmd, openQuizPanelCmd, refreshTreeCmd,
+        diagnosticCollection, changeListener, editorChangeListener,
+        codeActionProvider, webviewRegistration, completionProvider,
+        treeViewRegistration, createListener
     );
 }
 
